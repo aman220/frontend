@@ -24,7 +24,7 @@ const SavingsPage = () => {
       </div>
       <div className="bg-white p-6 rounded-lg shadow w-full mt-5">
         <div className="bg-purple-600 text-white rounded-lg w-full p-3">
-          <h1 className="text-center text-xl font-bold">Your Savings</h1>
+          <h1 className="text-center text-xl font-bold">Your Expenses</h1>
         </div>
         <div className="p-4">
           <div className="flex justify-end">

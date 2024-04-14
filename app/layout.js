@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
       <body>
         <div className="flex h-screen" id="main">
           <Sidebar />
-          <div className="flex flex-col flex-1">
+          <div className="flex flex-col w-full">
             <Header />
-            <main className="flex-1 overflow-y-auto p-6">{children}</main>
+            <main className="overflow-y-auto p-6">{children}</main>
             <Toaster />
           </div>
         </div>
