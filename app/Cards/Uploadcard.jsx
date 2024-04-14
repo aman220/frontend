@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_green.css";
+import { toast } from "sonner";
 
 const Uploadcard = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -9,10 +10,19 @@ const Uploadcard = () => {
   const [amount, setAmount] = useState("");
   const [note, setNote] = useState("");
 
+  const datetime = new Date().toLocaleDateString();
+  console.log(datetime);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted");
+    toast("New Entry Has Been Added In DB", {
+      description:  datetime ,
+      action: {
+        label: "close",
+        onClick: () => console.log("close"),
+      },
+      
+    });
   };
   return (
     <div className="bg-white p-6 rounded-lg shadow w-full col-span-2">
