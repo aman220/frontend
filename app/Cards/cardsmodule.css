@@ -1,0 +1,11 @@
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+    

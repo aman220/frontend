@@ -1,5 +1,5 @@
 "use client";
-import React , { useState } from "react";
+import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_green.css";
 
@@ -52,8 +52,23 @@ const Uploadcard = () => {
             </select>
           </div>
         </div>
-        <div className="flex mb-4">
-          <div className="w-1/2 pr-2">
+        <div className="flex mb-4 ">
+          <div className="w-1/2 mr-3">
+            <label
+              htmlFor="note"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Tag
+            </label>
+            <input
+              id="note"
+              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Enter note"
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+            ></input>
+          </div>
+          <div className="w-1/2">
             <label
               htmlFor="amount"
               className="block text-sm font-medium text-gray-700"
@@ -63,27 +78,11 @@ const Uploadcard = () => {
             <input
               type="number"
               id="amount"
-              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-green-600 font-semibold"
               placeholder="Enter amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
             ></input>
-          </div>
-          <div className="w-1/2 pl-2">
-            <label
-              htmlFor="note"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Note
-            </label>
-            <textarea
-              id="note"
-              rows="3"
-              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="Enter note"
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-            ></textarea>
           </div>
         </div>
         <div className="flex justify-end">
@@ -95,6 +94,27 @@ const Uploadcard = () => {
           </button>
         </div>
       </form>
+
+      <div className="border-gray-500 shadow-lg p-4 mt-10">
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-col gap-2">
+            <span className="font-snas font-semibold text-lg">
+              Remaing Amount
+            </span>
+            <span className="font-mono font-bold text-xl text-green-600">
+              + ₹ 2,00,000
+            </span>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-snas font-semibold text-lg">
+              Total Expenses
+            </span>
+            <span className="font-mono font-bold text-xl text-red-600">
+              - ₹50,000
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
